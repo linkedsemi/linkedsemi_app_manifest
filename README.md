@@ -1,0 +1,2 @@
+# linkedsemi_app_manifest
+linkedsemi_app_manifest
