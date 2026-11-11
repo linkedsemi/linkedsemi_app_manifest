@@ -1,0 +1,2 @@
+测试报告目录：810_driver_test/reports找最新日期即可，里面summary.md是测试项总pass情况
+注意：mbedtls_test flash_test otbn_keygen_test 由于ram大小或者其他限制，需要使用1os编译

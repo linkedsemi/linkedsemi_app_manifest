@@ -1,0 +1,67 @@
+# LinkedSemi application manifest
+#
+# 本仓库用于锁定一组子仓库的具体版本（revision 固定到 commit SHA），
+#
+# 使用方法（manifest 文件不在仓库根目录，需要 --mf 指定）：
+#   west init -m https://github.com/linkedsemi/linkedsemi_app_manifest.git \
+#       --mr <tag> --mf west_yaml/west.yml <workspace>
+#   west update
+
+manifest:
+
+  self:
+    path: linkedsemi_app_manifest
+
+  projects:
+    # Zephyr（linkedsemi 分支）
+    - name: zephyr
+      url: https://github.com/linkedsemi/zephyr.git
+      # revision: linkedsemi
+      revision: d438f19f97818faedefda000da77ddb63be2ca3c
+      path: zephyr
+      west-commands: scripts/west-commands.yml
+      import:
+        name-allowlist:
+          - fatfs
+          # - littlefs
+          - picolibc
+
+    # sdk（qsh 分支）
+    - name: LS_SDK
+      url: https://github.com/linkedsemi/LS_SDK.git
+      # revision: qsh
+      revision: 2e1684a9bef43d9d028007da62a1c8c71c6932b0
+      # revision: 84367d8af0b490921691b26765dd00b29d096eb6
+      path: modules/hal/linkedsemi
+      groups:
+        - hal
+
+    # mbedTLS（linkedsemi 分支）
+    - name: mbedtls
+      url: https://github.com/linkedsemi/mbedtls.git
+      # revision: linkedsemi
+      revision: de90c5f0f6cf786fb38a930c042519ef103dceff
+      path: modules/crypto/mbedtls
+      groups:
+        - crypto
+
+    # PFR TPM（master 分支）
+    - name: zephyr_pfr_tpm
+      url: https://github.com/linkedsemi/zephyr_pfr_tpm.git
+      # revision: master
+      revision: be17c49227ac657395832c7d5bae489142f4d638
+      path: modules/lib/pfr_tpm
+
+    # LinkedSemi Zephyr 应用工程（master 分支）
+    - name: linkedsemi_zephyr_project
+      url: https://github.com/linkedsemi/linkedsemi_zephyr_project.git
+      # revision: master
+      revision: 95653bad091b3b4b190472d94887377ba1ed36a0
+      path: linkedsemi_zephyr_project
+
+    # 810 driver test（linkedsemi 分支）
+    - name: 810_driver_test
+      url: https://github.com/linkedsemi/810_driver_test.git
+      # revision: linkedsemi
+      revision: 02ef77e357394f76e062c0f480b85e670f6209ad
+      path: 810_driver_test

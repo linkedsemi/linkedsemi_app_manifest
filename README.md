@@ -1,2 +1,3 @@
 # linkedsemi_app_manifest
 linkedsemi_app_manifest
+测试报告目录：810_driver_test/reports找最新日期即可，里面summary.md是测试项总pass情况
