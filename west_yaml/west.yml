@@ -17,7 +17,7 @@ manifest:
     - name: zephyr
       url: https://github.com/linkedsemi/zephyr.git
       # revision: linkedsemi
-      revision: d438f19f97818faedefda000da77ddb63be2ca3c
+      revision: d32eabe63cb42a512cd84b7d47a47307a557338a
       path: zephyr
       west-commands: scripts/west-commands.yml
       import:
@@ -31,7 +31,6 @@ manifest:
       url: https://github.com/linkedsemi/LS_SDK.git
       # revision: qsh
       revision: 2e1684a9bef43d9d028007da62a1c8c71c6932b0
-      # revision: 84367d8af0b490921691b26765dd00b29d096eb6
       path: modules/hal/linkedsemi
       groups:
         - hal
@@ -63,5 +62,5 @@ manifest:
     - name: 810_driver_test
       url: https://github.com/linkedsemi/810_driver_test.git
       # revision: linkedsemi
-      revision: 02ef77e357394f76e062c0f480b85e670f6209ad
+      revision: 735e2e97c42979c6a5be65924ca057ab36566e16
       path: 810_driver_test

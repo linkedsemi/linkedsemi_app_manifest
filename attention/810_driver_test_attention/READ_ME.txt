@@ -1,2 +1,3 @@
 测试报告目录：810_driver_test/reports找最新日期即可，里面summary.md是测试项总pass情况
 注意：mbedtls_test flash_test otbn_keygen_test 由于ram大小或者其他限制，需要使用1os编译
+新增：810_driver_test/reports/日期/i3c_dualcore_test_pure_i3c_12m5_flaky.md分析i3c不稳定的原因，由于测试的严格限制，每次跑的不确定性，i3c需要多跑几轮
